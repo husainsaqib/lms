@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "manageassignment";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    @*<div class="heading">Add and Manage Batches</div>*@
+    <div class="row fs-3 pt-1 m-3">
+        <center>Manage Assignments<b class="txt-color1"> Uploaded by Students</b></center>
+    </div>
+    <div class="row m-3">
+        <table class="table table-bordered table-hover" id="myTable">
+            <thead class="table-dark text-uppercase">
+                <tr>
+                    <th>Task No</th>
+                    <th>Task Subject</th>
+                    <th>Task Title</th>
+                    <th>Uploaded by</th>
+                    <th>Last Date</th>
+                    <th>Uploaded On</th>
+                    <th>Submitted By</th>
+                    <th>Mobile No</th>
+                    <th>Course</th>
+                    <th>Year</th>
+                    <th>Answer File</th>
+                    <th>Submitted On</th>
+                </tr>
+             </thead>
+            <tbody>
+                @if(ViewBag.assignment.Rows.Count>0)
+                {
+                    foreach(var row in ViewBag.assignment.Rows)
+                {
+                    <tr>
+                        <td>@row["taskno"]</td>
+                        <td>@row["subject"]</td>
+                        <td>@row["title"]</td>
+                        <td>@row["teacher"]</td>
+                        <td>@row["lastdate"]</td>
+                        <td>@row["date"]</td>
+                        <td>@row["name"]</td>
+                        <td>@row["mobile"]</td>
+                        <td>@row["course & branch"]</td>
+                        <td>@row["year"]</td>
+                        <td><a href="~/Content/answerfile/@row["answerfile"]"><i class="fa fa-download"></i></a></td>
+                        <td>@row[4]</td>
+                    </tr>
+                    @*Website footer->Developed By:<a href="https//">Mohd Saqib</div>
+                        in guidance of Techpile Technology pvt ltd*@
+                }
+                }
+            </tbody>
+        </table>
+
+    </div>
+

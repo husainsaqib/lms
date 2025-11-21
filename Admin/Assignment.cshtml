@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "Assignment";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head>
+    <title>Assignment Submission Form</title>
+    <style>
+        
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+            
+            transition: transform 0.3s;
+        }
+
+            .form-container:hover {
+                transform: translateY(-5px);
+            }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        select,
+        input[type="text"],
+        input[type="date"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+            select:focus,
+            input:focus,
+            textarea:focus {
+                border-color: #4CAF50;
+                outline: none;
+            }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .btn_class {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+            .btn_class:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        @*<div class="heading">Add and Manage Batches</div>*@
+        <div class="row fs-3 pt-1 m-3">
+            <center>Assignment<b class="txt-color1"> Submission</b></center>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="form-container">
+                <form action="/admin/saveassignment" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="batch_dropdown">Batch dropdown</label>
+                            <select id="batch_dropdown" class="ddl_category " name="ddl_batch" required>
+                                <option value="">Select Batch</option>
+                                @if (ViewBag.table1.Rows.Count > 0)
+                                {
+                                    foreach (var row in ViewBag.table1.Rows)
+                                    {
+                                        <option value="@row[0]">@row[1]</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="subject_name">Subject Name</label>
+                            <input type="text" id="subject_name" class="txt_title" name="txt_subject" placeholder="Enter Subject Name" required />
+                        </div>
+                    </div>
+                    <label for="assignment_title">Assignment Title</label>
+                    <input type="text" id="assignment_title" class="txt_num" name="txt_title" placeholder="Enter Assingment Title" required />
+
+                    <label for="assignment_description">Assignment Description</label>
+                    <textarea id="assignment_description" class="txt_title" name="txt_desc" rows="4" placeholder="Enter Assingment Description" required></textarea>
+                    <label for="assignment_file">Assignment File</label>
+                    <input type="file" id="assignment_file" class="add_file" name="file_assignment" accept=".pdf,.doc,.docx,.ppt,.pptx" placeholder="Enter Assingment Title" required />
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="uploaded_by">Uploaded By Teacher</label>
+                            <input type="text" id="uploaded_by" class="txt_title" name="txt_teacher" placeholder="Enter Teacher's name" required />
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="last_date">Last Date of Submission</label>
+                            <input type="date" id="last_date" name="date_lastdate" class="add_dt" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn_class w-25">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+    </div>
+</body>
+
+

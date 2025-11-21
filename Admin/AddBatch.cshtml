@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "AddBatch";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<html>
+<head>
+    <title>Manage Batches</title>
+    <style>
+        .heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,1);
+        }
+
+        .form-container {
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f8f0fa;
+            border-radius: 8px;
+            margin-top: 10px;
+            border: 1px solid black;
+        }
+
+        .table-container {
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        @*<div class="heading">Add and Manage Batches</div>*@
+        <div class="row fs-3 pt-1 m-3">
+            <center>Manage<b class="txt-color1"> Batch</b></center>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-4">
+            <div class="form-container">
+                <h4 class="mb-4">Add Batch</h4>
+                <form method="post" action="/admin/savebatch">
+                    <div class="mb-3">
+                        <label for="batchName" class="form-label">Batch Name</label>
+                        <input type="text" class="form-control" id="batchname" placeholder="Enter batch Name" name="txt_class" />
+                    </div>@* txt_class=user input*@
+                    <div class="d-grid">
+                        <button type="submit" name="btn_class" class="btn btn-primary">Add Batch</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="table-container">
+                <h4 class="mb-4">Manage Batches</h4>
+                <table class="table table-bordered table-hover" id="myTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>SR</th>
+                            <th>Batch Name</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @if(ViewBag.data.Rows.Count > 0)
+                        {
+                            foreach (var row in ViewBag.data.Rows)
+                            {
+                                <tr>
+                                    <td>@row["sr"]</td>
+                                    <td>@row["batch"]</td>
+                                    <td>@row["status"]</td>
+                                    <td><button class="btn btn-danger">DELETE</button></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+

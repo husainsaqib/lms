@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/all.css" rel="stylesheet" />
+    <script src="~/Content/js/bootstrap.bundle.js"></script>
+    <style>
+        :root {
+            --color1: #1cb69a;
+            --color2: #ee4a62;
+            --color3: #1f2432;
+        }
+
+        .bg-mycolor1 {
+            background: var(--color1);
+        }
+
+        .bg-mycolor2 {
+            background: var(--color2);
+        }
+
+        .bg-mycolor3 {
+            background: var(--color3);
+        }
+
+        .txt-color1 {
+            color: var(--color1) !important;
+        }
+
+
+        .txt-color2 {
+            color: var(--color2) !important;
+        }
+
+        .txt-color3 {
+            color: var(--color3) !important;
+        }
+
+        .ic {
+            border: 1px solid white;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            transition: all .6s;
+        }
+
+            .ic:hover {
+                border: 1px solid var(--color1);
+                color: var(--color1);
+                transition: all .6s;
+                transform: rotate(360deg);
+            }
+
+        .t1 {
+            font-size: 14px;
+        }
+
+            .t1 a {
+                text-decoration: none;
+                color: white;
+            }
+
+        #menu {
+            background: transparent !important;
+        }
+
+        .slider {
+            min-height: 450px;
+            background: url('../Content/images/s1.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .login {
+            background: rgba(255,255,255,.2);
+            margin-top: 10%;
+            padding: 4%;
+            backdrop-filter: blur(5px);
+            color: white;
+        }
+
+        .form-control {
+            border-radius: 0px !important;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .btn1 {
+            height: 50px;
+            width: 120px;
+            border: none;
+            color: white;
+        }
+
+        .sicon {
+            height: 90px;
+            width: 90px;
+            background: var(--color2);
+            text-align: center;
+            line-height: 90px;
+            border-radius: 50%;
+            font-size: 40px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row t1 bg-mycolor3 text-light text-center py-1">
+            <div class="col-sm-4">
+
+                <a href="#">Contact & Support</a> |
+                <a href="#" class="txt-color2">Sign In</a> |
+                <a href="#" class="txt-color2">Change Password</a>
+            </div>
+            <div class="col-sm-4">
+                Welcome to My Learning Management Software
+            </div>
+            <div class="col-sm-4">
+                <i class="fa-brands fa-facebook ic"></i>
+                <i class="fa-brands fa-twitter ic"></i>
+                <i class="fa-brands fa-youtube ic"></i>
+                <i class="fa-brands fa-instagram ic"></i>
+                <i class="fa-brands fa-linkedin ic"></i>
+
+
+            </div>
+        </div>
+
+        <div class="row t2 py-4 shadow bg-body-tertiary rounded">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-3 fs-4 pt-1">
+                        Indeed <b class="txt-color1">
+                            Learning
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </b>
+                    </div>
+                    <div class="col-sm-7">
+
+                        <!-- Start Menu -->
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary p-0" id="menu">
+                            <div class="container-fluid">
+
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/student/dashboard"><i class="fa-solid fa-house"></i>Dashboard</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Student/notes">Notes</a>
+                                        </li>
+                                        @*
+        <li class="nav-item">
+            <a class="nav-link" href="~/Student/Courses">Courses</a>
+        </li>*@
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Student/Task">Task</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Student/SoftwareKit">Software Kit</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Student/password">Change Password</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Student/logout">Logout</a>
+                                        </li>
+
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- End Menu -->
+
+                    </div>
+                    
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-envelope txt-color2"></i>
+                         @if (Session["email"]==null)
+            {
+                <script>
+                    alert("please login first");
+                    window.location.href = "/home/index";
+                </script>
+            }
+else
+            {
+                             <img src="~/Content//profilepic/@Session["picture"]" height="35px" width="35px"/><br/><b>Welcome, @Session["email"]</b>
+                ;
+            }
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 pt-2">
+
+            </div>
+        </div>
+        <div class="row childpage" style="min-height:500px;">
+            <div class="col-sm-12">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="row bfooter bg-mycolor3 text-center py-2 text-light">
+            <div class="col-sm-12">
+                &copy; Techpile Technology Pvt. Ltd.
+            </div>
+        </div>
+
+    </div>
+   <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

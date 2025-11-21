@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "AddVideoCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head>
+    <title>Manage Video Category</title>
+    <style>
+        .heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,1);
+        }
+
+        .form-container {
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f8f0fa;
+            border-radius: 8px;
+            
+            border: 1px solid black;
+        }
+
+        .table-container {
+            padding: 20px;
+            box-sizing: border-box;
+          
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        @*<div class="heading">Add and Manage Batches</div>*@
+        <div class="row fs-3 pt-1 m-3">
+            <center>Manage<b class="txt-color1"> Video Category</b></center>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-4">
+            <div class="form-container">
+                <h4 class="mb-4">Add Category</h4>
+                <form method="post" action="/admin/savevideocategory" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="CategoryName" class="form-label">Category Name</label>
+                        <input type="text" class="form-control" id="Categoryname" placeholder="enter Category Name" name="txt_category" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Thumbnail" class="form-label">Thumbnail Name</label>
+                        <input type="file" class="form-control" id="thumbnail" name="file_thumbnail" />
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" name="btn_class" class="btn btn-primary">Add Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="table-container">
+                <h4 class="mb-4">Manage Video Category</h4>
+                <table class="table table-bordered table-hover" id="myTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>SR</th>
+                            <th>Category name</th>
+                            <th>Category picture</th>
+                            <th>Added On</th>
+                           
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                       @if(ViewBag.data.Rows.Count>0)
+                       {
+                           foreach(var rows in ViewBag.data.Rows)
+                {
+                    <tr>
+                        <td>@rows[0]</td>
+                        <td>@rows[1]</td>
+                        <td><img src="~/Content/catpici/@rows[2]" height="60px" width="60px"/></td>
+                        <td>@rows[3]</td>
+                    </tr>
+                }
+                       }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+

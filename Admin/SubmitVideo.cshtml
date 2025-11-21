@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "SubmitVideo";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head>
+    <title>Video Submission Form</title>
+    <style>
+
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .txt_title, .txt_link, .txt_desc, .ddl_category, .file_thumbnail {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn_class {
+            
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+            .btn_class:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        @*<div class="heading">Add and Manage Batches</div>*@
+        <div class="row fs-3 pt-1 m-3">
+            <center>Add / Manage<b class="txt-color1"> Video</b></center>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 t1 bg-mycolor3 shadow p-3 mb-5 bg-body rounded ">
+            
+            <form method="post" action="/admin/savevideo" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="video_title">Video Title</label>
+                        <input type="text" id="video_title" class="txt_title" name="txt_title" placeholder="Enter Video Title" required />
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="batch">Batch:</label>
+                        <select id="video_category" class="ddl_category" name="ddl_batch" required>
+                            <option value="">Select Batch</option>
+                            @if (ViewBag.table1.Rows.Count > 0)
+                            {
+                                foreach(var row in ViewBag.table1.Rows)
+                {
+                    <option value="@row[0]">@row[1]</option>
+                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <label for="video_category">Video Category:</label>
+                <select id="video_category" class="ddl_category" name="ddl_category" required>
+                    <option value="">Select Category</option>
+                    @if (ViewBag.table2.Rows.Count > 0)
+                    {
+                        foreach (var row in ViewBag.table2.Rows)
+                        {
+                            <option value="@row[0]">@row[1]</option>
+                        }
+                    }
+
+                </select>
+                <label for="video_description">Video Discription:</label>
+                <textarea id="video_discription" class="txt_desc" name="txt_desc" rows="4" placeholder="Enter Value Description" required></textarea>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="video_link">Video Link</label>
+                        <input type="text" id="video_link" class="txt_link" name="txt_link" placeholder="Enter Video Link" required />
+                        </div>
+                    <div class="col-sm-6">
+                        <label for="video_thumbnail">Video Thumbnail</label>
+                        <input type="file" id="video_thumbnail" class="file_thumbnail" name="file_thumbnail" accept="image/*" required />
+                    </div>
+                    </div>
+                        <button type="submit" class="btn_class btn btn-primary">Submit</button>
+            </form>
+            </div>
+        </div>
+    <div class="col-sm-3">
+      
+        </div>
+
+</body>
+

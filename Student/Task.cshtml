@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Task";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+
+<div class="container">
+    <div class="fs-3 text-center my-">Daily<b class="txt-color2">Task</b></div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        @if (ViewBag.task.Rows.Count > 0)
+        {
+            foreach (var row in ViewBag.task.Rows)
+            {
+
+
+                <div class="col-sm-10">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>Sr</th>
+                            <th>Subject </th>
+                            <th>Description</th>
+                            <th>Download</th>
+                            <th>Date</th>
+                            <th>LastDate</th>
+                            <th>Submit</th>
+                        </tr>
+                        <tr>
+                            <td>@row[0]</td>
+                            <td>@row[3]</td>
+                            <td>@row[4]</td>
+                            <td>Click to Download and submit<a class="btn bg-mycolor2" href="~/Content/assignment/">Download</a></td>
+                            <td>@row[8]</td>
+                            <td>@row[7]</td>
+                            
+                            <td>@if (row.IsNull("userid"))
+                            {
+                                <form action="/student/submittask" method="post" enctype="multipart/form-data">
+                                  <input type="hidden" name="taskno" value="@row[0]"/>
+                                    <input required type="hidden" name="email" value="@Session["email"]"/>
+                                    <input type="file" required name="taskfile"/>
+                                    <button type="submit" class="btn bg-mycolor2 float-end"><i class="fa-solid fa-upload"></i>Submit Task</button>
+                               </form>
+                                }
+                                else {
+                            <a class="btn btn-success float-end" href="~/Content/answerfile/@row["answefile"]">
+
+                                < b > Download your answer file </ b >
+                            </a>}</td>
+
+                        </tr>
+                    </table>
+
+
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>NO Task Found!</strong> Admin has not uploaded any task for your batch in this category till date please wait....
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        <div class="col-sm-1"></div>
+    </div>
+
+</div>
+

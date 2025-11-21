@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+<style>
+    .card {
+        transition: all ease 2s;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+        transition: 1.5s;
+    }
+
+   
+</style>
+<div class="container">
+    <div class="fs-3 text-center my-2">My <b class="text-mycolor2">Courses</b></div>
+    <div class="row">
+        @if(ViewBag.cat.Rows.Count>0)
+        {
+            foreach(var row in ViewBag.cat.Rows)
+            {
+
+
+        <div class="col-sm-3">
+            <a href="/student/videolecture?catid=@row[0]">
+                <div class="card position-relative mx-3 shadow-lg rounded-3" style="width: 18rem;">
+                    <img src="~/Content/catpici/@row["Thumbnail"]" class="card-img-top img-fluid" style="max-height:100px" alt="Html pic">
+                    <div class="position-absolute top-3 start-3 badge bg-mycolor2 rounded-2">@row["Date"]</div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">@row["catname"]</h5>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+            }
+        }
+       
+    </div>
+</div>
+

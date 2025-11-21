@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+<style>
+    .cardzoom{
+        transition:all ease 2s;
+    }
+    .cardzoom:hover{
+
+        transform:scale(1.1);
+        transition:all ease 2s;
+    }
+    a{
+        text-decoration:none;
+    }
+</style>
+<div class="container">
+    <div class="row mt-3">
+        <div class="text-center mb-4 fs-2" >Dashboard</div>
+        <div class="col-sm-4">
+            <div class="card border-0 shadow-lg p-2 rounded-2" style="width: 18rem;">
+                <img src="~/Content/images/d1.png" class="rounded-circle img-fluid mx-auto" style="max-height:100px;max-width:100px;" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mohd Saqib</h5>
+                    <h5 class="card-title">mosaqi@gmail.com</h5>
+                    <h5 class="card-title">956542258</h5>
+                    <h5 class="card-title">course and branch</h5>
+                    <h5 class="card-title">BAtchs</h5>
+
+                    <a href="#" class="btn bg-mycolor2">Update Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="row mb-5 mt-2">
+                <div class="col-sm-3">
+                    <a href="~/Student/Videolecture/">
+                        <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                            <i class="fa-solid fa-circle-play fs-3 p-2"></i>
+                            <h5>Video Lectures</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-3">
+                    <a href="~/Student/Assignment/">
+                        <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                            <i class="fa-solid fa-book-open-reader fs-3 p-2"></i>
+                            <h4>Assignment</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-3">
+                    <a href="~/Student/Courses/">
+                        <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                            <i class="fa-solid fa-user fs-3"></i>
+                            <h4>Courses</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="~/Student/Task/">
+                        <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                            <i class="fa-solid fa-list-check fs-3 p-2"></i>
+                            <h5>Task</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-3">
+                    <a href="~/Student/SoftwareKit/">
+                        <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                            <i class="fa-solid fa-book-open fs-3 p-2"></i>
+                            <h5>Software Kit</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-3">
+                    <a href="~/Student/changepassword">
+                        <div class="card cardzoom mx-auto p-3 text-center border-0 shadow-lg">
+                            <i class="fa-solid fa-key fs-3 p-2"></i>
+                            <h6>Change Password</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+            </div>
+        
+         </div>

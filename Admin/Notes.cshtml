@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Notes";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    @*<div class="heading">Add and Manage Batches</div>*@
+    <div class="row fs-3 pt-1 m-3">
+        <center>Add and Manage<b class="txt-color1"> Notes</b></center>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-md-4">
+        <div class="form-container">
+            <h4 class="mb-4">Add <b class="txt-mycolor2">Notes</b></h4>
+            <form method="post" action="/admin/savenotes" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="batchName" class="form-label">Title for Notes:</label>
+                    <input type="text" class="form-control" id="batchname" placeholder="Enter batch Name" name="txt_title" />
+                </div>@* txt_class=user input*@
+                <div class="mb-3">
+                    <label for="batchName" class="form-label">Description of Notes:</label>
+                    <textarea class="form-control" id="batchname" placeholder="Enter batch Name" name="txt_desc"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="batchName" class="form-label">Uploased by:</label>
+                    <input type="text" class="form-control" id="batchname" placeholder="Enter batch Name" name="txt_teacher" />
+                </div>
+                <div class="mb-3">
+                    <label for="batchName" class="form-label">Select Batch:</label>
+                    <select id="batch_dropdown" class="ddl_category " name="ddl_batch" required>
+                        <option value="">Select Batch</option>
+                        @if (ViewBag.table1.Rows.Count > 0)
+                        {
+                            foreach (var row in ViewBag.table1.Rows)
+                            {
+                                <option value="@row[0]">@row[1]</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="batchName" class="form-label">Slect notes:</label>
+                    <input type="file" class="form-control" id="batchname" placeholder="Enter batch Name" name="file_notes" />
+                </div>
+                <div class="d-grid">
+                    <button type="submit" name="btn_class" class="btn btn-primary">Add Notes</button>
+                </div>
+            </form>
+        </div>
+        </div>
+</div>>
+

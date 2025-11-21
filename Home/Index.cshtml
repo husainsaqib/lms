@@ -1,0 +1,636 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/all.css" rel="stylesheet" />
+    <style>
+        :root {
+            --color1: #1cb69a;
+            --color2: #ee4a62;
+            --color3: #1f2432;
+        }
+
+        .bg-mycolor1 {
+            background: var(--color1);
+        }
+
+        .bg-mycolor2 {
+            background: var(--color2);
+        }
+
+        .bg-mycolor3 {
+            background: var(--color3);
+        }
+
+        .txt-color1 {
+            color: var(--color1) !important;
+        }
+
+
+        .txt-color2 {
+            color: var(--color2) !important;
+        }
+
+        .txt-color3 {
+            color: var(--color3) !important;
+        }
+
+        .ic {
+            border: 1px solid white;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            transition: all .6s;
+        }
+
+            .ic:hover {
+                border: 1px solid var(--color1);
+                color: var(--color1);
+                transition: all .6s;
+                transform: rotate(360deg);
+            }
+
+        .t1 {
+            font-size: 14px;
+        }
+
+            .t1 a {
+                text-decoration: none;
+                color: white;
+            }
+
+        #menu {
+            background: transparent !important;
+        }
+
+        .slider {
+            min-height: 450px;
+            background: url('../Content/images/s1.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .login {
+            background: rgba(255,255,255,.2);
+            margin-top: 10%;
+            padding: 4%;
+            backdrop-filter: blur(5px);
+            color: white;
+        }
+
+        .form-control {
+            border-radius: 0px !important;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .btn1 {
+            height: 50px;
+            width: 120px;
+            border: none;
+            color: white;
+        }
+
+        .sicon {
+            height: 90px;
+            width: 90px;
+            background: var(--color2);
+            text-align: center;
+            line-height: 90px;
+            border-radius: 50%;
+            font-size: 40px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="home"class="row t1 bg-mycolor3 text-light text-center py-1">
+            <div class="col-sm-4">
+                <a href="#">FAQs</a> |
+                <a href="#">Contact & Support</a> |
+                <a href="#" class="txt-color2">Sign Up</a> |
+                <a href="#" class="txt-color2">Sign In</a> |
+            </div>
+            <div class="col-sm-4">
+                Welcome to My Learning Management Software
+            </div>
+            <div class="col-sm-4">
+                <i class="fa-brands fa-facebook ic"></i>
+                <i class="fa-brands fa-twitter ic"></i>
+                <i class="fa-brands fa-youtube ic"></i>
+                <i class="fa-brands fa-instagram ic"></i>
+                <i class="fa-brands fa-linkedin ic"></i>
+
+            </div>
+        </div>
+        <div class="row t2 py-4 shadow bg-body-tertiary rounded">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-3 fs-4 pt-1">
+                        EduSine <b class="txt-color1">
+                            Learning
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </b>
+                    </div>
+                    <div class="col-sm-5">
+
+                        <!-- Start Menu -->
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary p-0" id="menu">
+                            <div class="container-fluid">
+
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#home"><i class="fa-solid fa-house"></i> Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#aboutus">About Us</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#contact">Contactus</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#register">Register</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#faqs">FAQs</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/home/adminlogin">Admin Login</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- End Menu -->
+
+                    </div>
+                    <div class="col-sm-2">
+                        <i class="fa-regular fa-envelope txt-color2"></i>
+                        <b>Mail Us</b><br />
+                        edusine23@gmail.com
+                    </div>
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-phone txt-color2"></i>
+                        <b>Call Us</b><br />
+                        +91 7085059131
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 pt-2">
+
+            </div>
+        </div>
+        <div class="row t3 bg-mycolor1">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row slider rounded-0" style="border-radius:0px !important">
+            <div class="col-sm-12 p-0" style="background:rgba(0,0,0,.4);">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-sm-7 text-light">
+                                <div class="fs-1 text-light"
+                                     style="line-height:45px;margin-top:18%;">
+                                    Learn <b class="txt-color2">200+</b>
+                                    <br />Best online courses from
+                                    <br />EduSine Learning
+                                </div>
+                                <b>Learn from Best Intructor</b><br />
+                                <i>Training || Development || Placement</i><br /><br />
+                                <a href="#" class="btn bg-mycolor2 text-light">Register <i class="fa-solid fa-arrow-right"></i></a>
+
+                            </div>
+                            <div class="col-sm-5 login">
+                                <form method="post" action="/home/login">
+                                    Username<br />
+                                             <input type="email" class="form-control shadow mb-3 bg-body-tertiary"
+                                    
+                                    placeholder="Username" name="email" />
+                                    Password<br />
+                                            <input type="password" class="form-control shadow mb-3 bg-body-tertiary" placeholder="Password" name="password" />
+                                    
+                                    
+                                    <input type="submit" class="btn1 bg-mycolor2" value="Login" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row services py-5 text-center">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <i class="fa-solid fa-chart-simple"></i><br />
+                        <h3 class="text-uppercase">Development</h3>
+                        <b>Logical and Problem Solving</b>
+                        <p>Best platform for logical and problem Solving skills</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa-solid fa-computer"></i>
+                        <br />
+                        <h3 class="text-uppercase">Learning</h3>
+                        <b>Fast and efficient</b>
+                        <p>CProvide Best Interactions and Instructors</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa-solid fa-chalkboard"></i><br />
+                        <h3 class="text-uppercase">Practice</h3>
+                        <b>Sufficient Material</b>
+                        <p>Provide excessive study material</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div id="about" class="row aboutus " style="min-height:500px;">
+            <div class="col-sm-12" style="height:50px;line-height:50px;font-size:30px;background:red;"> <center><b><u>About Us</u></b></center></div>
+            <div class="row container">
+                <div class="col-sm-6">
+                    <p style="font-size:15px;" class="fs-5 text-bg-info">
+
+                        Welcome to EduSine Learning
+                        At EduSine Learning, we believe in the power of education to transform lives. Our mission is to provide a comprehensive and user-friendly platform that empowers learners, educators, and organizations to achieve their educational goals through innovative technology and exceptional content.
+                        Our Mission
+                        Our mission is to make learning accessible, engaging, and effective for everyone. We strive to bridge the gap between traditional and digital education by offering a versatile Learning Management System that supports a wide range of learning styles and educational needs. Whether you're a student aiming to expand your knowledge, an instructor looking to deliver dynamic courses, or an organization seeking to train and upskill your team, [Your LMS Name] is here to help you succeed.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <img src="~/Content/images/images.jpeg" alt="this is us" height="100%" width="100%"/>
+                </div>
+            </div>
+        </div>
+        <div id="register" class="row register py-5">
+            <div class="text-center" style="line-height:20px !important;">
+                <p class="fs-3">
+                    Register
+                    <b class="txt-color2">
+                        Here..
+                        <i class="fa-regular fa-user"></i>
+                    </b>
+                </p>
+                dummy text of the printing psum has been
+                the industry's stan
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <form action="/home/saveuser" method="post" enctype="multipart/form-data">
+                        <div class="col-sm-12 p-5 mt-4" style="background:#1cb69a1c;">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Name<br /><input type="text"
+                                                     placeholder="Name.." name="txt_name"
+                                                     class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                                <div class="col-sm-6">
+
+                                    Email<br /><input type="email"
+                                                      placeholder="Email.." name="txt_email"
+                                                      class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Mobile<br /><input type="number"
+                                                       placeholder="Name.." name="txt_mobno"
+                                                       class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                                <div class="col-sm-6">
+
+                                    Profile Picture<br /><input type="file"
+                                                                placeholder="Email.." name="file_profile"
+                                                                class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Course and Branch<br />
+                                    <select class="form-control mb-3 shadow bg-body-tertiary border-0" name="ddl_course">
+                                        <option>--Select Course--</option>
+                                        <option>Diploma (CS/IT)</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+
+                                    Year<br />
+                                    <select class="form-control mb-3 shadow bg-body-tertiary border-0" name="ddl_year">
+                                        <option>--Select Year --</option>
+                                        <option>1st Year</option>
+                                        <option>2st Year</option>
+                                        <option>3st Year</option>
+                                        <option>4st Year</option>
+                                        <option>Passout</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                    Select Batch<br />
+                                    <select class="form-control mb-3 shadow bg-body-tertiary border-0" name="ddl_batch">
+                                        <option>-- Select Batch--</option>
+                                        @if (ViewBag.table1.Rows.Count > 0)
+                                        {
+                                            foreach (var row in ViewBag.table1.Rows)
+                                            {
+                                                <option value="@row[0]">@row[1]</option>
+                                            }
+                                        }
+
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+
+                                    Password<br /><input type="password"
+                                                         placeholder="password.." name="txt_password"
+                                                         class="form-control mb-3 shadow bg-body-tertiary border-0" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <br /><input type="submit"
+                                                 class="form-control mb-3 shadow bg-mycolor1 border-0 w-25" />
+
+                                </div>
+
+                            </div>
+                            </div>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+
+        
+        <div id="faqs" class="row faqs" style="min-height:500px;">
+            <div class="col-sm-2"></div>
+
+           
+            <div class="col-sm-8">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Frequently Asked Questions</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>1. What is EduSine Learning?</option>
+                                    <option>
+                                        EduSine Learning is an online platform designed to facilitate learning and training.
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>2. How can I access my course materials?</option>
+                                    <option>
+                                        Once enrolled, go to your dashboard, select the course from your list
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>3. What should I do if I forget my password?</option>
+                                    <option>
+                                        Click on the “Forgot Password” link on the login page. 
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>4. How do I submit assignments? </option>
+                                    <option>
+                                        Access the assignment section within your course. 
+
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>
+                                        1.	How do I enroll in a course?
+                                    </option>
+                                    <option> <br/>and click “Enroll.” If enrollment requires approval, you may need to wait for confirmation.
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>
+                                        2.	How can I access my course materials?
+                                    </option>
+                                    <option>
+                                        Once enrolled, go to your dashboard, select the course from your list
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>
+                                        3. How do I submit assignments?
+                                    </option>
+                                    <option>
+                                        Access the assignment section within your course. 
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>
+                                        5.	Who should I contact if I have questions about the course content?
+                                    </option>
+                                    <option>
+                                        Reach out to your course instructor or teaching assistant via the LMS messaging system.
+
+
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>
+                                        1. How do I create a new course?
+                                    </option>
+                                    <option>
+                                        Log in to your instructor account, navigate to the “Course Management” section.
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>
+                                        2. How can I grade assignments?
+
+                                    </option>
+                                    <option>
+                                        Go to the “Grades” section of the course management area.
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option>
+                                        3. How do I communicate with my students?
+
+                                    </option>
+                                    <option>
+                                        Use the LMS messaging system or the course announcement
+
+                                    </option>
+
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-sm-2">
+               
+                       
+                      
+                     
+                      
+
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+        <div id="contact" class="row contactus" style="min-height:500px;background:#ee4a621f;">
+          <div class="col-sm-6">
+              <div class="row">
+                  <div class="col-sm-12">Get In Touch</div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+              
+                      <form>
+                          <div>
+                              <input class="a" type="text" placeholder="first name" name="txt_name1" />
+                              <input type="text" placeholder="last name" name="txt_name2" />
+                          </div>
+                          <div>
+                              <input class="a" type="email" placeholder="enter email" name="txt_email" />
+                              <input class="a" type="number" placeholder="phone" name="txt_num" />
+                          </div>
+                          <div>
+                              <input class="a" type="text" placeholder="subject" name="txt_subject" />
+                              <input class="a" type="text" placeholder="pcourse" name="txt_txt_course" />
+                          </div>
+                          <div>
+                              <textarea>Enter Message</textarea>
+                          </div>
+                          <div>
+                              <textarea>Enter Message</textarea>
+                          </div>
+                          <div>
+                              <button type="submit" value="send message" class="btn btn-info"></button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+
+
+          </div>
+          <div class="col-sm-6"></div>
+
+
+        </div>
+        
+        <div class="row ufooter bg-mycolor3" style="min-height:300px;">
+            <div class="w-full h-96">
+                <iframe allowfullscreen="" class="w-full h-full" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.116099752!2d-74.25987568740125!3d40.69767006334845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250b82c8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1632928471234!5m2!1sen!2sin">
+                </iframe>
+            </div>
+
+
+        </div>
+        <div class="row bfooter bg-mycolor3 text-light text-center py-2">
+            <div class="col-sm-6">
+                Developed By : Er Mohd Saqib
+            </div>
+            <div class="col-sm-6">
+                &copy; Techpile Technology Pvt. Ltd.
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/js/bootstrap.bundle.js"></script>
+</body>
+</html>

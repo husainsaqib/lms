@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "ManageStudent";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    @*<div class="heading">Add and Manage Batches</div>*@
+    <div class="row fs-3 pt-1 m-3">
+        <center>LIST OF ALL<b class="txt-color1"> REGISTERED STUDENTS</b></center>
+    </div>
+    <div class="row">
+       
+        <div class="col-sm-12 mx-3">
+            <table class="table table-bordered table-hover" id="myTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile NO.</th>
+                        <th>Email-id</th>
+                        <th>Password</th>
+                        <th>Course & Branch</th>
+                        <th>Year</th>
+                        <th>Picture</th>
+                        <th>Batch Name</th>
+                        <th>Status</th>
+                        <th>Reg. Date</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    @if(ViewBag.data.Rows.Count>0)
+                    {
+                        foreach(var row in ViewBag.data.Rows)
+                {
+                    <tr>
+                        <td>@row["name"]</td>
+                        <td>@row["mobno"]</td>
+                        <td>@row["emailid"]</td>
+                        <td>@row["password"]</td>
+                        <td>@row["course"]</td>
+                        <td>@row["year"]</td>
+                        <td><img src="~/Content/profilepic/@row["picture"]" height="80px"/></td>
+                        <td>@row[12]</td>
+                        <td><a href="/admin/updatestatus?email=@row["emailid"]&status=@(Convert.ToInt32(row[9]))">
+    <button class="btn btn-danger">@row[9]</button>
+</a></td>
+                        <td>@row["regdate"]</td>
+
+                    </tr>
+                }
+                    }
+                </tbody>
+            </table>
+        </div>
+        
+            </div>
+        </div>
+
